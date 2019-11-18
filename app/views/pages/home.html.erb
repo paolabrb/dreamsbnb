@@ -1,2 +1,10 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>All the dreams go here</h1>
+<p>When we finally create some of them, lol</p>
+
+<% @dreams.each do |dream| %>
+<h1>Dream title: <%= dream.title %></h1>
+<p>Description: <%= dream.description %></p>
+<p>Duration: <%= dream.duration %></p>
+<p>Vibe: <%= dream.vibe %></p>
+<p>A dream posted by: <%= dream.user.email %></p>
+<% end %>
