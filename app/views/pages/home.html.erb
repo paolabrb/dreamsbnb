@@ -1,6 +1,6 @@
 <h1>All the dreams go here, and this will be a banner</h1>
 <p>When we finally create some of them, lol</p>
-
+<!--This is the area with cards, displaying every dream in the db-->
 <div class="cards">
   <% @dreams.each do |dream| %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
@@ -9,5 +9,6 @@
   <% end %>
 </div>
 
-
-<%= link_to 'add a new dream', new_dream_path %>
+<!--Button to add a new dream-->
+<br>
+<%= link_to 'add a new dream', new_dream_path, class: 'btn btn-primary' %>
