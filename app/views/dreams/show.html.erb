@@ -10,6 +10,7 @@
 
 <p><%= @dream.vibe %></p>
 
+<% if policy(@dream).edit? %>
 <%= link_to 'edit this dream', edit_dream_path(@dream) %>
-
+<% end %>
 <%= link_to 'Back to home', root_path %>
