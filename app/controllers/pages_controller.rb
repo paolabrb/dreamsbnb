@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @dreams = Dream.all
+    @dreams = policy_scope(Dream)
   end
 end
