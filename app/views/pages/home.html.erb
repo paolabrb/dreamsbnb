@@ -1,6 +1,9 @@
-<h1>All the dreams go here, and this will be a banner</h1>
-<p>When we finally create some of them, lol</p>
+<%# Banner %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://getwallpapers.com/wallpaper/full/f/e/b/1156420-full-size-hd-gradient-wallpapers-2560x1440-free-download.jpg);">
+</div>
+  <h1 class="tagline">GOOD DREAMS OVERNIGHT,<br>SHIPPED HOURLY,<br> DIRECTLY ~</h1>
 
+<%# Cards %>
 <div class="cards">
   <% @dreams.each do |dream| %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
@@ -9,5 +12,6 @@
   <% end %>
 </div>
 
-
-<%= link_to 'add a new dream', new_dream_path %>
+<!--Button to add a new dream-->
+<br>
+<%= link_to 'add a new dream', new_dream_path, class: 'btn btn-primary' %>

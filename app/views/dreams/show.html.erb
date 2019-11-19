@@ -1,18 +1,29 @@
+<!--Dream show page with the details-->
 
+<div class="container">
+  <h1>This is a nice dream test page!</h1>
 
-<h1>This is a nice dream test page!</h1>
+  <h2>Title: <%= @dream.title %></h2>
 
-<h2><%= @dream.title %></h2>
+  <p>Description: <%= @dream.description %></p>
 
-<p><%= @dream.description %></p>
+  <p>Duration: <%= @dream.duration %></p>
 
-<p><%= @dream.duration %></p>
+  <p>vibe: <%= @dream.vibe %></p>
 
-<p><%= @dream.vibe %></p>
-
-<% if policy(@dream).destroy? %>
+<!-- edit and delete button, only for dream creator or admin-->
+                              
+  <% if policy(@dream).edit? %>
+  <%= link_to 'edit this dream', edit_dream_path(@dream), class: 'btn btn-primary' %>
+  <% end %>
+  <br>
+  <% if policy(@dream).destroy? %>
   <%= link_to '🗑', delete_dream_path, method: :delete, data: { confirm: "Delete #{@dream.title}?" } %>
-<% end %>
+  <% end %>
 
-<%= link_to 'Back to home', root_path %>
+<!-- Back to home button-->
+
+  <%= link_to 'Back to home', root_path, class: 'btn btn-primary' %>
+
+</div>
 

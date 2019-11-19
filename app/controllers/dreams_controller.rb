@@ -17,8 +17,24 @@ class DreamsController < ApplicationController
     @dream = Dream.new(dream_params)
     @dream.user = current_user
     authorize @dream
+    if @dream.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
+  def edit
+    set_dream
+    authorize @dream
+  end
+
+  def update
+    set_dream
+    @dream.update(dream_params)
+    authorize @dream
     @dream.save
-    redirect_to root_path
+    redirect_to dream_path(@dream)
   end
 
   def destroy

@@ -1,0 +1,15 @@
+<!--form to edit the dream-->
+
+<div class="container">
+  <h1>Edit your dream</h1>
+
+  <%= simple_form_for(@dream) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :vibe %>
+  <%= f.input :duration %>
+  <%= f.submit 'edit dream'%>
+  <% end %>
+
+</div>
+
