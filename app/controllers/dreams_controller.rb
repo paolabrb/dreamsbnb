@@ -23,6 +23,7 @@ class DreamsController < ApplicationController
 
   def destroy
     set_dream
+    authorize @dream
     @dream.destroy
     redirect_to root_path
   end

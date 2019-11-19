@@ -16,4 +16,8 @@ class DreamPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def destroy?
+    record.user == user || user.admin
+  end
 end
