@@ -3,8 +3,9 @@
   <%= simple_form_for(@dream) do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
-  <%= f.input :vibe %>
-  <%= f.input :duration %>
+  <%= f.input :vibe, collection: Dream::VIBES%>
+  <%= f.input :duration, label:'Duration (min)', placeholder: 'forever' %>
   <%= f.submit 'create dream'%>
   <% end %>
 </div>
+
