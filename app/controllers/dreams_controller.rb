@@ -4,7 +4,7 @@ class DreamsController < ApplicationController
   end
 
   def show
-    @dream = Dream.find(params[:id])
+    set_dream
     authorize @dream
   end
 
@@ -17,7 +17,30 @@ class DreamsController < ApplicationController
     @dream = Dream.new(dream_params)
     @dream.user = current_user
     authorize @dream
+    if @dream.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
+  def edit
+    set_dream
+    authorize @dream
+  end
+
+  def update
+    set_dream
+    @dream.update(dream_params)
+    authorize @dream
     @dream.save
+    redirect_to dream_path(@dream)
+  end
+
+  def destroy
+    set_dream
+    authorize @dream
+    @dream.destroy
     redirect_to root_path
   end
 
@@ -25,5 +48,9 @@ class DreamsController < ApplicationController
 
   def dream_params
     params.require(:dream).permit(:title, :description, :duration, :vibe)
+  end
+
+  def set_dream
+    @dream = Dream.find(params[:id])
   end
 end
