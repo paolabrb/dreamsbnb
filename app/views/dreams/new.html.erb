@@ -7,6 +7,8 @@
   <%= f.input :description %>
   <%= f.input :vibe, collection: Dream::VIBES%>
   <%= f.input :duration, label:'Duration (min)', placeholder: 'forever' %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit 'ADD', class: 'create-button-form' %>
   <% end %>
 </div>
