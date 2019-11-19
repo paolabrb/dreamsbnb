@@ -1,5 +1,10 @@
 // Specific CSS for your home-page
 
+.banner {
+  object-fit: cover;
+  height: 350px;
+}
+
 // tagline
 .tagline {
   margin: 40px;
@@ -11,13 +16,18 @@
   padding: 11px 10px;
   border: solid black 2px;
   font-size : 14px;
+  color:black
+}
+
+.create-button:hover {
+  color:white;
+  text-decoration: none;
+  background-color: #6F6899;
 }
 
 // footer
-
 .footer {
   margin-top: 100px;
   padding: 100px;
-  background-color: #31586F;
-
+  background-color: #655E97;
 }
