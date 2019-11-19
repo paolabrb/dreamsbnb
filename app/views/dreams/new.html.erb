@@ -2,7 +2,7 @@
 <%= simple_form_for(@dream) do |f| %>
 <%= f.input :title %>
 <%= f.input :description %>
-<%= f.input :vibe %>
-<%= f.input :duration %>
+<%= f.input :vibe, collection: ["floating","empowering" ,"careless", "vibrant", "optimistic", "happy", "stoned", "light" ,"fun", "realistic", "emotional" , "psychedelic", "sexual", "loving" , "healing", "futuristic", "past"] %>
+<%= f.input :duration, label:'Duration (min)', placeholder: 'forever' %>
 <%= f.submit 'create dream'%>
 <% end %>
