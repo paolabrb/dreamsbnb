@@ -3,6 +3,7 @@ class PagesController < ApplicationController
     @dreams = policy_scope(Dream)
   end
 
-  def user_profile
+  def profile
+    @user = User.find(params[:id])
   end
 end

@@ -1,12 +1,13 @@
 <h1>This will be the profile</h1>
 
-<p>Things to set up here: profile picture, first/last name, nickname</p>
+<p>Things to set up here: profile picture, first/last name, nickname?</p>
 
-<h2>User <%= current_user.email %>'s posted dreams:</h2>
+<h3>User <%= @user.email %>'s posted dreams:</h3>
 <ul>
-  <% current_user.dreams.each do |dream| %>
+  <% @user.dreams.each do |dream| %>
    <li><%= link_to dream.title, dream_path(dream) %></li>
   <% end %>
 </ul>
 
-<h2>User <%= current_user.email %>'s booked dreams:</h2>
+<h2>User <%= @user.email %>'s booked dreams:</h2>
+<p>To Do: implement the booking feature and controller etc:)</p>
