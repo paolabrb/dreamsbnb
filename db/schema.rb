@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2019_11_19_171137) do
     t.bigint "dream_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "amount"
+    t.date "date_booking"
     t.index ["dream_id"], name: "index_bookings_on_dream_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
