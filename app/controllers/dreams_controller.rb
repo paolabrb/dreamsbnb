@@ -17,8 +17,11 @@ class DreamsController < ApplicationController
     @dream = Dream.new(dream_params)
     @dream.user = current_user
     authorize @dream
-    @dream.save
-    redirect_to root_path
+    if @dream.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
