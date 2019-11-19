@@ -10,7 +10,9 @@
 
 <p><%= @dream.vibe %></p>
 
-<%= link_to '🗑', delete_dream_path(@dream), method: :delete, data: { confirm: "Delete #{@dream.title}?" } %>
+<% if policy(@dream).destroy? %>
+  <%= link_to '🗑', delete_dream_path, method: :delete, data: { confirm: "Delete #{@dream.title}?" } %>
+<% end %>
 
 <%= link_to 'Back to home', root_path %>
 
