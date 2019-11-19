@@ -1,8 +1,11 @@
-<h1>YO</h1>
-<%= simple_form_for(@dream) do |f| %>
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :vibe, collection: Dream::VIBES%>
-<%= f.input :duration, label:'Duration (min)', placeholder: 'forever' %>
-<%= f.submit 'create dream'%>
-<% end %>
+<div class="container">
+  <h1>Add a new dream</h1>
+  <%= simple_form_for(@dream) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :vibe, collection: Dream::VIBES%>
+  <%= f.input :duration, label:'Duration (min)', placeholder: 'forever' %>
+  <%= f.submit 'create dream'%>
+  <% end %>
+</div>
+
