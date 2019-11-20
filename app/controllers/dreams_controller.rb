@@ -6,6 +6,7 @@ class DreamsController < ApplicationController
   def show
     set_dream
     authorize @dream
+    @booking = Booking.find_by dream_id: @dream
   end
 
   def new

@@ -1,20 +1,19 @@
 class BookingsController < ApplicationController
   def new
     set_dream
-    @booking = Booking.new
     authorize @dream
+    @booking = Booking.new
     authorize @booking
   end
 
   def create
     set_dream
-    @booking = Booking.new(booking_params)
-    @user = current_user
     authorize @dream
+    @booking = Booking.new(booking_params)
     authorize @booking
+    set_user
     @booking.user = @user
     @booking.dream = @dream
-    @booking.user = @user
     if @booking.save
       redirect_to user_profile_path(@user)
     else
@@ -23,23 +22,29 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    set_dream
-    set_booking
-    authorize @dream
+    @dream = Dream.find(params[:dream_id])
+    @booking = Booking.find_by dream_id: @dream
     authorize @booking
   end
 
   def update
+    @dream = Dream.find(params[:dream_id])
+    set_booking
+    authorize @booking
+    set_user
+    @booking.user = @user
+    @booking.dream = @dream
+    @booking.update(booking_params)
+    redirect_to user_profile_path(@user)
+  end
+
+  def destroy
     set_dream
     set_booking
-    @user = current_user
-    authorize @dream
     authorize @booking
-    if @booking.save
-      redirect_to user_profile_path(@user)
-    else
-      render :new
-    end
+    set_user
+    @booking.destroy
+    redirect_to user_profile_path(@user)
   end
 
   private
@@ -54,5 +59,9 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
+  end
+
+  def set_user
+    @user = current_user
   end
 end
