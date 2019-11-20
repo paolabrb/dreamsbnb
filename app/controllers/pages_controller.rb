@@ -7,4 +7,13 @@ class PagesController < ApplicationController
     @user = User.find(params[:id])
     @dreams = @user.dreams
   end
+
+  def edit_profile
+    @user = current_user
+    @dreams = @user.dreams
+  end
+
+  def edit_update
+    @user = params[:photo]
+  end
 end
