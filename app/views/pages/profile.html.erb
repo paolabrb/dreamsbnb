@@ -1,26 +1,32 @@
+<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://getwallpapers.com/wallpaper/full/f/e/b/1156420-full-size-hd-gradient-wallpapers-2560x1440-free-download.jpg)">
 
-<h1>WELCOME DREAMERS TO MY PAGE <br><%= @user.email %></h1>
-<img class="avatar-large" alt="avatar-large" src="https://pbs.twimg.com/profile_images/2098893021/images_400x400.jpg" />
-<h3>Dreamer <%= @user.email %>'s posted dreams:</h3>
+  <div class="container-form" style="text-align: center;">
+    <h1>WELCOME DREAMERS TO MY PAGE <br><%= @user.email %></h1>
+    <img class="avatar-large" alt="avatar-large" src="https://seedlingsgardening.com/wp-content/uploads/sites/9/2016/11/avatar.jpg" />
+  </div>
 
-<div class="cards">
-  <% @dreams.each do |dream| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cauldronsandcupcakes.files.wordpress.com/2016/05/pink.jpg)">
-      <%= link_to dream.title, dream_path(dream) %>
-    </div>
+  <h3>Dreamer <%= @user.email %>'s posted dreams:</h3>
+
+  <div class="cards">
+    <% @dreams.each do |dream| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= dream.photo %>)">
+        <%= link_to dream.title, dream_path(dream) %>
+      </div>
+    <% end %>
+  </div>
+
+  <h3>Dreamer <%= @user.email %>'s booked dreams:</h2>
+
+  <% if @user.bookings.empty? %>
+    <p>Whoops - I still haven't booked any dream :(</p>
   <% end %>
+
+  <li><%= booking.dream.title %>, booked on <%= booking.date_booking  %>
+    <%= link_to 'UPDATE BOOKING', edit_dream_booking_path(booking.dream, booking), class: 'create-button-form' %>
+    <%= link_to 'DELETE BOOKING', dream_booking_path(booking.dream, booking),
+        method: :delete,
+        data: { confirm: "Are you sure?" },
+        class: 'create-button-form' %>
+  </li>
 </div>
 
-<p class="nickname"></p>
-
-
-<!--<p>Things to set up here: profile picture, first/last name, nickname?</p>-->
-
-<!-- <ul>
-  <% @user.dreams.each do |dream| %>
-   <li><%= link_to dream.title, dream_path(dream) %></li>
-  <% end %>
-</ul> -->
-
-<h3>Dreamer <%= @user.email %>'s booked dreams:</h2>
-<!--<p>To Do: implement the booking feature and controller etc:)</p>-->
