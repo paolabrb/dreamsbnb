@@ -1,38 +1,39 @@
-<h1>WELCOME TO MY PAGE <%= @user.nickname %></h1>
-<img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://getwallpapers.com/wallpaper/full/f/e/b/1156420-full-size-hd-gradient-wallpapers-2560x1440-free-download.jpg)">
 
-<h3>These are the dreams I posted:</h3>
-<div class="cards">
-  <% @dreams.each do |dream| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      <%= link_to dream.title, dream_path(dream) %>
-    </div>
-  <% end %>
-</div>
 
-<p class="nickname"></p>
-<%= simple_form_for(@user) do |f| %>
+<div class="container-form" style="text-align: center;">
+  <h1 style="padding-top: 20px">Hi, I am <%= @user.email %></h1>
+  <img class="avatar-large" alt="avatar-large" src="https://seedlingsgardening.com/wp-content/uploads/sites/9/2016/11/avatar.jpg" />
+  <p>Things to set up here: profile picture uploader, nickname</p>
+  <%= simple_form_for(@user) do |f| %>
   <!-- [...] -->
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden%>
   <%= f.submit %>
   <!-- [...] -->
 <% end %>
+</div>
 
-
-<p>Things to set up here: profile picture, first/last name, nickname?</p>
-
-<h3>User <%= @user.email %>'s posted dreams:</h3>
-<ul>
-  <% @user.dreams.each do |dream| %>
-   <li><%= link_to dream.title, dream_path(dream) %></li>
+<h3>See my dreams:</h3>
+<div class="cards">
+  <% @dreams.each do |dream| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= dream.photo %>)">
+      <%= link_to dream.title, dream_path(dream) %>
+    </div>
   <% end %>
-</ul>
+</div>
 
-<h2>User <%= @user.email %>'s booked dreams:</h2>
 
-<ul>
+<h3>I wish to dream:</h3>
+<% if @user.bookings.empty? %>
+  <p>Whoops - I still haven't booked any dream :(</p>
+<% end %>
+<div class="cards">
   <% @user.bookings.each do |booking| %>
-  <li><%= booking.dream.title %>, booked on <%= booking.date_booking %></li>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= booking.dream.photo %>)">
+      <%= link_to booking.dream.title, dream_path(booking.dream) %>
+    </div>
   <% end %>
-</ul>
+</div>
+
+</div>
