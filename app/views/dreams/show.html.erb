@@ -3,6 +3,7 @@
 <div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://getwallpapers.com/wallpaper/full/f/e/b/1156420-full-size-hd-gradient-wallpapers-2560x1440-free-download.jpg)">
 
 <div class="container-form">
+
   <h2>Title: <%= @dream.title %></h2>
 
   <p>Description: <%= @dream.description %></p>
@@ -10,6 +11,22 @@
   <p>Duration: <%= @dream.duration %></p>
 
   <p>vibe: <%= @dream.vibe %></p>
+
+  <% if @dream.user != current_user%>
+    <%= link_to 'DREAM THIS', new_dream_booking_path(@dream), class: 'create-button-form' %>
+  <% end %>
+
+  <% if @dream.user != current_user %>
+<!-- go over the bookings-->
+    <% @dream.bookings.each do |booking| %>
+<!-- if current_user.bookings.include?(booking) display update and delete-->
+      <% if current_user.bookings.include?(booking) %>
+        <%= link_to 'UPDATE BOOKING', root_path, class: 'create-button-form' %>
+        <%= link_to 'DELETE BOOKING', root_path, class: 'create-button-form' %>
+      <% end %>
+    <% end %>
+  <% end %>
+
 
 <!-- edit and delete button, only for dream creator or admin-->
 
