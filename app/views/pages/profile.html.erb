@@ -1,4 +1,16 @@
-<h1>This will be the profile</h1>
+<h1>WELCOME TO MY PAGE <%= @user.nickname %></h1>
+<img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+
+<h3>These are the dreams I posted:</h3>
+<div class="cards">
+  <% @dreams.each do |dream| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <%= link_to dream.title, dream_path(dream) %>
+    </div>
+  <% end %>
+</div>
+
+<p class="nickname"></p>
 
 <p>Things to set up here: profile picture, first/last name, nickname?</p>
 
