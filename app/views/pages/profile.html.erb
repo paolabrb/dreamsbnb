@@ -5,13 +5,6 @@
   <h1 style="padding-top: 20px">Hi, I am <%= @user.email %></h1>
   <img class="avatar-large" alt="avatar-large" src="https://seedlingsgardening.com/wp-content/uploads/sites/9/2016/11/avatar.jpg" />
   <p>Things to set up here: profile picture uploader, nickname</p>
-  <%= simple_form_for(@user) do |f| %>
-  <!-- [...] -->
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden%>
-  <%= f.submit %>
-  <!-- [...] -->
-<% end %>
 </div>
 
 <h3>See my dreams:</h3>
