@@ -1,6 +1,5 @@
-<h1>Book <%=@dream.title %></h1>
+<h1>Book <%= @dream.title %> now!</h1>
 <%= simple_form_for [@dream, @booking] do |f| %>
   <%= f.input :date_booking %>
   <%= f.submit 'ADD', class: 'create-button-form' %>
 <% end %>
-

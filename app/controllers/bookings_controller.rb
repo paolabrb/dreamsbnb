@@ -14,8 +14,9 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.user = @user
     @booking.dream = @dream
+    @booking.user = @user
     if @booking.save
-      redirect_to dream_path(@dream)
+      redirect_to user_profile_path(@user)
     else
       render :new
     end
