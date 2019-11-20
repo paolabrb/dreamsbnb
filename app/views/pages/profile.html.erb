@@ -24,6 +24,12 @@
 <h2>User <%= @user.email %>'s booked dreams:</h2>
 <ul>
   <% @user.bookings.each do |booking| %>
-  <li><%= booking.dream.title %>, booked on <%= booking.date_booking %></li>
+  <li><%= booking.dream.title %>, booked on <%= booking.date_booking  %>
+      <%= link_to 'UPDATE BOOKING', edit_dream_booking_path(booking.dream, booking), class: 'create-button-form' %>
+        <%= link_to 'DELETE BOOKING', dream_booking_path(booking.dream, booking),
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            class: 'create-button-form' %>
+  </li>
   <% end %>
 </ul>
