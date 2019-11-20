@@ -8,7 +8,7 @@
   <%= f.input :vibe, collection: Dream::VIBES, class: 'text'%>
   <%= f.input :duration, label:'Duration (min)', placeholder: 'forever', class: 'text' %>
   <%= f.input :photo, class: 'text' %>
-  <%= f.input :photo_cache, as: :hidden, class: 'text' %>
+  <%= f.input :photo_cache, as: :hidden, class: 'text', default: 'https://images.unsplash.com/photo-1565932887479-b18108f07ffd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80' %>
   <%= f.submit 'ADD', class: 'create-button-form' %>
   <% end %>
 </div>
