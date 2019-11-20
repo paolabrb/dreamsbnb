@@ -11,6 +11,14 @@
 </div>
 
 <p class="nickname"></p>
+<%= simple_form_for(@user) do |f| %>
+  <!-- [...] -->
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden%>
+  <%= f.submit %>
+  <!-- [...] -->
+<% end %>
+
 
 <p>Things to set up here: profile picture, first/last name, nickname?</p>
 
@@ -23,3 +31,5 @@
 
 <h2>User <%= @user.email %>'s booked dreams:</h2>
 <p>To Do: implement the booking feature and controller etc:)</p>
+
+<%= link_to 'edit', edit_user_path(current_user)  %>
