@@ -1,10 +1,11 @@
-<h1>WELCOME TO MY PAGE <%= @user.nickname %></h1>
-<img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
 
-<h3>These are the dreams I posted:</h3>
+<h1>WELCOME DREAMERS TO MY PAGE <br><%= @user.email %></h1>
+<img class="avatar-large" alt="avatar-large" src="https://pbs.twimg.com/profile_images/2098893021/images_400x400.jpg" />
+<h3>Dreamer <%= @user.email %>'s posted dreams:</h3>
+
 <div class="cards">
   <% @dreams.each do |dream| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cauldronsandcupcakes.files.wordpress.com/2016/05/pink.jpg)">
       <%= link_to dream.title, dream_path(dream) %>
     </div>
   <% end %>
@@ -12,14 +13,14 @@
 
 <p class="nickname"></p>
 
-<p>Things to set up here: profile picture, first/last name, nickname?</p>
 
-<h3>User <%= @user.email %>'s posted dreams:</h3>
-<ul>
+<!--<p>Things to set up here: profile picture, first/last name, nickname?</p>-->
+
+<!-- <ul>
   <% @user.dreams.each do |dream| %>
    <li><%= link_to dream.title, dream_path(dream) %></li>
   <% end %>
-</ul>
+</ul> -->
 
-<h2>User <%= @user.email %>'s booked dreams:</h2>
-<p>To Do: implement the booking feature and controller etc:)</p>
+<h3>Dreamer <%= @user.email %>'s booked dreams:</h2>
+<!--<p>To Do: implement the booking feature and controller etc:)</p>-->
