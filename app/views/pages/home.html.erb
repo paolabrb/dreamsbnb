@@ -3,6 +3,17 @@
 </div>
   <h1 class="tagline">WELL CURATED DREAMS<br>SHIPPED INSTANTLY<br> WITH CARE </h1>
 
+<!-- Search function container -->
+<div class="container">
+  <%= form_tag root_path, method: :get do %>
+    <%= label :name, 'Filter a vibe here:' %>
+    <% vibes_array = Dream::VIBES %>
+    <%= select_tag :query,
+        options_for_select(vibes_array)%>
+    <%= submit_tag "Search", class: 'create-button' %>
+  <% end %>
+</div>
+
 <%# Cards %>
 <div class="cards">
   <% @dreams.each do |dream| %>
@@ -11,5 +22,9 @@
     </div>
   <% end %>
 </div>
+
+<!-- Back to all Dreams after a search -->
+<%= link_to '*All dreams*', root_path, class: 'create-button' %>
+
 <!--Button to add a new dream-->
 <%= link_to '*Post your dream*', new_dream_path, class: 'create-button' %>

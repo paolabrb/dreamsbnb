@@ -1,6 +1,13 @@
 class DreamsController < ApplicationController
   def index
-    @dreams = policy_scope(Dream)
+    # if params[:query].present?
+    #   @dreams = Dream.search_by_vibe(params[:query])
+    # else
+    #   @dreams = policy_scope(Dream)
+    # end
+    @dreams = Dream.first
+
+    # @dreams = Dream.search_by_vibe('Fun')
   end
 
   def show

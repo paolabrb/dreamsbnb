@@ -1,6 +1,10 @@
 class PagesController < ApplicationController
   def home
-    @dreams = policy_scope(Dream)
+    if params[:query].present?
+      @dreams = Dream.search_by_vibe(params[:query])
+    else
+      @dreams = policy_scope(Dream)
+    end
   end
 
   def profile
