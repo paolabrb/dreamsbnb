@@ -19,7 +19,7 @@
 
 <%# Cards %>
 <% if params[:query].present? %>
-  <p>The current dreams with the vibe "<%= params[:query] %>"" are:</p>
+  <p>The current dreams with the vibe "<%= params[:query] %>" are:</p>
   <% @dreams.each do |dream| %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= dream.photo %>)">
           <%= link_to dream.title, dream_path(dream) %>
