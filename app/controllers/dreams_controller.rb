@@ -1,4 +1,5 @@
 class DreamsController < ApplicationController
+  before_action :authenticate_user!
   def index
     # if params[:query].present?
     #   @dreams = Dream.search_by_vibe(params[:query])
