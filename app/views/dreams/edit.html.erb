@@ -1,15 +1,14 @@
 <!--form to edit the dream-->
-
-<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://getwallpapers.com/wallpaper/full/f/e/b/1156420-full-size-hd-gradient-wallpapers-2560x1440-free-download.jpg)">
-
 <div class="container-form">
-  <h1>Edit your dream</h1>
   <%= simple_form_for(@dream) do |f| %>
+  <h1>DREAMERS,</h1>
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :vibe, collection: Dream::VIBES%>
   <%= f.input :duration, label:'Duration (min)', placeholder: 'forever' %>
-  <%= f.submit 'UPDATE', class: 'create-button-form' %>
+  <%= f.input :photo, class: 'text' %>
+  <%= f.input :photo_cache, as: :hidden, class: 'text'%>
+  <%= f.submit 'UPDATE DREAM', class: 'create-button-form' %>
   <% end %>
 </div>
 

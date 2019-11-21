@@ -1,15 +1,13 @@
-<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cauldronsandcupcakes.files.wordpress.com/2016/05/pink.jpg)">
-
 <div class="container-form">
-  <h1 class="sky">Add a new dream</h1>
   <%= simple_form_for(@dream, :defaults => { :input_html => { :class => "text" } }) do |f| %>
+  <h1>DREAMERS,</h1>
   <%= f.input :title, class: 'text' %>
   <%= f.input :description, class: 'text' %>
   <%= f.input :vibe, collection: Dream::VIBES, class: 'text'%>
   <%= f.input :duration, label:'Duration (min)', placeholder: 'forever', class: 'text' %>
   <%= f.input :photo, class: 'text' %>
-  <%= f.input :photo_cache, as: :hidden, class: 'text', default: 'https://images.unsplash.com/photo-1565932887479-b18108f07ffd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80' %>
-  <%= f.submit 'ADD', class: 'create-button-form' %>
+  <%= f.input :photo_cache, as: :hidden, class: 'text'%>
+  <%= f.submit 'POST DREAM', class: 'create-button-form' %>
   <% end %>
 </div>
 

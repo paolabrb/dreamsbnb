@@ -1,12 +1,9 @@
 .container-form {
-  width: 800px;
-  margin: 0 auto;
-  text-align: center;
+ width: 900px;
+ margin: 0 auto;
+ padding: 100px 0;
+ text-align: center;
 }
-
-// body {
-//   background-color: pink;
-// }
 
 .edit-button {
   margin: 40px;
@@ -20,12 +17,26 @@
   margin: 40px;
   padding: 11px 10px;
   border: solid black 2px;
-  font-size : 14px;
+  font-size : 12px;
+  width: 120px;
+  margin: 24px 0px;
+  padding: 11px 15px;
   color:black
 }
 
 
 .dream-title {
   margin-top: 50px;
+}
+
+form {
+  border: 1px solid rgba(0,0,0,0.5);
+  padding: 30px 70px 90px 90px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  h1 {
+    text-align: left;
+    padding: 20px 5px;
+  }
 }
 
