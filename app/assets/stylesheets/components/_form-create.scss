@@ -1,11 +1,17 @@
 .container-form {
- width: 500px;
- margin: 0 auto;
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .sky {
-  padding-top: 40px;
-  color:white;
+ padding-top: 40px;
+ color:white;
+}
+
+.dream-image {
+ text-align: center;
+ margin-top: 100px;
 }
 
 .create-button-form {
@@ -14,5 +20,13 @@
   width: 120px;
   margin: 24px 0px;
   padding: 11px 15px;
+}
+
+.create-button-form a {
+  margin-left: 100px;
+}
+
+.dream-title {
+  margin-top: 50px;
 }
 
