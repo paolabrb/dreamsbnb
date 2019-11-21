@@ -1,11 +1,7 @@
 .container-form {
- width: 500px;
+ width: 900px;
  margin: 0 auto;
-}
-
-.sky {
-  padding-top: 40px;
-  color:white;
+ padding: 100px 0;
 }
 
 .create-button-form {
@@ -14,5 +10,16 @@
   width: 120px;
   margin: 24px 0px;
   padding: 11px 15px;
+}
+
+form {
+  border: 1px solid rgba(0,0,0,0.5);
+  padding: 30px 70px 90px 90px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  h1 {
+    text-align: left;
+    padding: 20px 5px;
+  }
 }
 
