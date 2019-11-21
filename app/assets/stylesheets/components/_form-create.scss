@@ -1,18 +1,31 @@
 .container-form {
- width: 500px;
- margin: 0 auto;
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.sky {
-  padding-top: 40px;
-  color:white;
-}
+// body {
+//   background-color: pink;
+// }
 
-.create-button-form {
+.edit-button {
+  margin: 40px;
+  padding: 11px 10px;
   border: solid black 2px;
   font-size : 14px;
-  width: 120px;
-  margin: 24px 0px;
-  padding: 11px 15px;
+  color:black
+}
+
+.delete-button {
+  margin: 40px;
+  padding: 11px 10px;
+  border: solid black 2px;
+  font-size : 14px;
+  color:black
+}
+
+
+.dream-title {
+  margin-top: 50px;
 }
 
