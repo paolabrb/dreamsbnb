@@ -11,7 +11,7 @@
 <!-- standard picture -->
 <% end %>
 
-
+<p>Created by <strong><%= link_to @dream.user.nickname, user_profile_path(@dream.user) %></strong></p>
 
   <% if @dream.user != current_user%>
     <%= link_to 'DREAM THIS', new_dream_booking_path(@dream), class: 'book-button' %>
