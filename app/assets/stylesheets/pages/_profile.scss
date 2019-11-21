@@ -19,13 +19,18 @@ h3 {
   margin-top: 150px;
 }
 
+
 .row {
   img {
     width: 300px;
   }
+  padding: 20px 20px;
+  border: 1px solid rgba(0,0,0,0.8);
+  border-radius: 3px;
+  margin: 10px auto;
 }
 
-.profile-with-stats {
+.user-dashboard {
   width: 900px;
 }
 
