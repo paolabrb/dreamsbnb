@@ -20,5 +20,17 @@ h3 {
 }
 
 
+.row {
+  img {
+    width: 300px;
+  }
+  padding: 20px 20px;
+  border: 1px solid rgba(0,0,0,0.8);
+  border-radius: 3px;
+  margin: 10px auto;
+}
 
+.user-dashboard {
+  width: 900px;
+}
 
