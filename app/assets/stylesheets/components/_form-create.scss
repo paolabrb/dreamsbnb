@@ -2,14 +2,31 @@
  width: 900px;
  margin: 0 auto;
  padding: 100px 0;
+ text-align: center;
 }
 
-.create-button-form {
+.edit-button {
+  margin: 40px;
+  padding: 11px 10px;
+  border: solid black 2px;
+  font-size : 14px;
+  color:black
+}
+
+.delete-button {
+  margin: 40px;
+  padding: 11px 10px;
   border: solid black 2px;
   font-size : 12px;
   width: 120px;
   margin: 24px 0px;
   padding: 11px 15px;
+  color:black
+}
+
+
+.dream-title {
+  margin-top: 50px;
 }
 
 form {

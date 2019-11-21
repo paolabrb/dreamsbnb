@@ -1,29 +1,39 @@
 <!--Dream show page with the details-->
 
-<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(http://getwallpapers.com/wallpaper/full/f/e/b/1156420-full-size-hd-gradient-wallpapers-2560x1440-free-download.jpg)">
 
 <div class="container-form">
 
-  <h2><%= @dream.title %></h2>
+  <h2 class="dream-title"><%= @dream.title %></h2>
+    <%  if @dream.photo.present? %>
+    <%= cl_image_tag @dream.photo, height: 600, width: 800, crop: :fill, class: 'dream-image' %>
+    <% else %>
+    <%= image_tag "http://getwallpapers.com/wallpaper/full/f/e/b/1156420-full-size-hd-gradient-wallpapers-2560x1440-free-download.jpg", alt: "alttext" %>
+<!-- standard picture -->
+<% end %>
 
-  <p>Description: <%= @dream.description %></p>
 
-  <p>Duration: <%= @dream.duration %></p>
-
-  <p>Vibe: <%= @dream.vibe %></p>
 
   <% if @dream.user != current_user%>
-    <%= link_to 'DREAM THIS', new_dream_booking_path(@dream), class: 'create-button-form' %>
+    <%= link_to 'DREAM THIS', new_dream_booking_path(@dream), class: 'book-button' %>
+
   <% end %>
+
+
 
 <!-- edit and delete button, only for dream creator or admin-->
 
   <% if policy(@dream).edit? %>
-  <%= link_to 'EDIT', edit_dream_path(@dream), class: 'create-button-form' %>
+  <%= link_to 'EDIT', edit_dream_path(@dream), class: 'edit-button' %>
   <% end %>
   <br> <br>
   <% if policy(@dream).destroy? %>
-  <%= link_to 'DELETE', delete_dream_path, method: :delete, data: { confirm: "Delete #{@dream.title}?" }, class: 'create-button-form' %>
+  <%= link_to 'DELETE', delete_dream_path, method: :delete, data: { confirm: "Delete #{@dream.title}?" }, class: 'book-button' %>
+
+   <p>Description: <%= @dream.description %></p>
+
+  <p>Duration: <%= @dream.duration %></p>
+
+  <p>Vibe: <%= @dream.vibe %></p>
   <% end %>
 </div>
 
