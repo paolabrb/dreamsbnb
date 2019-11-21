@@ -1,12 +1,11 @@
 .go {
-  margin: 30px 390px;
-  color:white;
-
+margin: 30px 390px;
+color:white;
 }
 
 .form-inputs {
- width: 500px;
- margin: 0 auto;
+width: 500px;
+margin: 0 auto;
 }
 
 .btn {
@@ -18,17 +17,23 @@ font-size : 14px;
 color:black
 }
 
-.simple_form {
-    background-color: 987771;
-    margin-top:7px;
+.btn:hover {
+  color:white;
+  text-decoration: none;
+  background-color: #6F6899;
+}
 
+.simple_form {
+background-color: 987771;
+margin-top:7px;
 }
 
 #new-user {
-  background-color: black;
-    margin-top:7px;
+background-color: black;
+margin-top:7px;
 }
 
 .alert {
-  font-size: 14px;
+font-size: 14px;
+//color:red;
 }
