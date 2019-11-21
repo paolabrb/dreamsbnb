@@ -1,6 +1,11 @@
 <div class="container" id="user-dashboard">
-  <img class="avatar-large" alt="avatar-large" src="https://seedlingsgardening.com/wp-content/uploads/sites/9/2016/11/avatar.jpg" />
+  <% if @user.photo.present?  %>
+    <%= cl_image_tag(@user.photo, width: 200, height: 200, crop: :thumb, gravity: :face, radius: :max, class: 'avatar-large')%>
+  <% else %>
+    <img class="avatar-large" alt="avatar-large" src="https://seedlingsgardening.com/wp-content/uploads/sites/9/2016/11/avatar.jpg" />
+  <% end %>
   <h1><%= @user.nickname %> Nickname</h1>
+  <%= link_to 'Edit your profile', edit_user_path(@user) %>
   <h3>Dreamer <%= @user.email %>'s posted dreams:</h3>
 
 <!--If the @user IS the current user (own profile)-->
