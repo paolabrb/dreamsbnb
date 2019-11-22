@@ -1,28 +1,54 @@
+.user-dashboard {
+  width: 900px;
+}
+
+// Design Avatar und Display Name
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
 h1 {
-  text-align: center;
-  margin-top: 50px;
-  font-size: 27px;
+  padding-bottom: 10px;
+  font-size: 50px;
+  font-weight: bold;
 }
 
 .avatar-large {
-  width: 200px;
+  width: 300px;
   border-radius: 50%;
-  margin: 50px 150px;
+  padding: 20px;
+  padding-top: 30px;
 }
 
+// Subtitles
 h3 {
   text-align: center;
-  margin-top: 150px;
+  padding-top: 32px;
+  font-size: 30px;
 }
 
-.cards {
-  margin-top: 150px;
-}
-
-
+// Design cards
 .row {
   img {
     width: 300px;
+  }
+  p {
+    font-size: 18px;
+  }
+  h4 {
+    font-size: 26px;
+    font-weight: bold;
+  }
+  h5 {
+    font-size: 22px;
   }
   padding: 20px 20px;
   border: 1px solid rgba(0,0,0,0.8);
@@ -30,7 +56,10 @@ h3 {
   margin: 10px auto;
 }
 
-.user-dashboard {
-  width: 900px;
+.card-text {
+  align-items: left;
 }
+
+
+
 
