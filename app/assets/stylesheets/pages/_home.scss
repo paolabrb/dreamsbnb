@@ -42,7 +42,7 @@ body {
 
 }
 .intro {
-  margin: 40px 162px 20px 200px;
+  margin: 32px 162px 20px 200px;
   text-align: center;
   color: #7d7c7c;
   font-size: 14px;
@@ -50,7 +50,9 @@ body {
 
 
 .vibe-text {
-  margin-top:0px;
+  .vibe-text {
+  margin-bottom: -40px;
+}
 }
 
 
@@ -59,6 +61,8 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-top: -64px;
+
 }
 
 .dot {
@@ -87,7 +91,7 @@ body {
 }
 
 .cards {
- margin-top:-150px;
+ margin-top:50px;
 // border: 20px #FBE27B solid;
  }
 
