@@ -1,35 +1,90 @@
 <!--Dream show page with the details-->
+<%# Banner %>
+<body>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(https://images.unsplash.com/photo-1514477917009-389c76a86b68?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1261&q=80
+  )">
+      <div class="container">
+        <%= form_tag root_path, method: :get do %>
+        <%= label :name, '' %>
+        <br><br>
+        <% vibes_array = Dream::VIBES %>
 
+        <%= select_tag :query,
+            options_for_select(vibes_array), class: 'drop-down btn btn-flat'%>
+             <%= submit_tag "Search", class: 'search-button btn btn-flat'%>
+      <% end %>
+    </div>
+  </div>
+   <h1 class="tagline">Find and Book a dream<br>anytime</h1>
 
-<div class="container-form">
-
+   <!--  Search function container -->
   <h2 class="dream-title"><%= @dream.title %></h2>
+
+  <div class="container-form">
+
+    <div style="text-align:center">
+      <span class="dot-dream"></span>
+    </div>
+
+    <div class="dream-info">
+     <p>Description: <%= @dream.description %><br>
+        Duration: <%= @dream.duration %><br>
+        Vibe: <%= @dream.vibe %></p>
+      <p>Created by <strong><%= link_to @dream.user.nickname, user_profile_path(@dream.user) %></strong></p>
+    </div>
+
     <%  if @dream.photo.present? %>
-      <%= cl_image_tag @dream.photo, height: 600, width: 800, crop: :fill, class: 'dream-image' %>
+      <%= cl_image_tag @dream.photo, height:350, width: 600, crop: :fill, class: 'dream-image' %>
     <% else %>
+<!-- standard picture -->
       <%= image_tag "http://getwallpapers.com/wallpaper/full/f/e/b/1156420-full-size-hd-gradient-wallpapers-2560x1440-free-download.jpg", alt: "alttext" %>
     <% end %>
 
-  <p>Description: <%= @dream.description %></p>
+    <% if @dream.user != current_user%>
+      <%= link_to 'DREAM THIS', new_dream_booking_path(@dream), class: 'book-button' %>
+    <% end %>
 
-  <p>Duration: <%= @dream.duration %></p>
+  <!-- edit and delete button, only for dream creator or admin-->
+    <div class="btns-flex">
+      <% if policy(@dream).edit? %>
+      <%=link_to 'Edit', edit_dream_path(@dream), class: 'edit-button current' %>
+      <% end %>
+      <% if policy(@dream).destroy? %>
+      <%= link_to 'Delete', delete_dream_path, method: :delete, data: { confirm: "Delete #{@dream.title}?" }, class: 'delete-button current' %>
+      </div>
+      <% end %>
+    </div>
 
-  <p>Vibe: <%= @dream.vibe %></p>
+    <div class="edit-form">
+      <%= simple_form_for(@dream) do |f| %>
+      <h1>DREAMERS,</h1>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :vibe, collection: Dream::VIBES%>
+      <%= f.input :duration, label:'Duration (min)', placeholder: 'forever' %>
+      <%= f.input :photo, class: 'text' %>
+      <%= f.input :photo_cache, as: :hidden, class: 'text'%>
+      <%= f.submit 'UPDATE DREAM', class: 'create-button-form' %>
+      <% end %>
+    </div>
 
-  <p>Created by <strong><%= link_to @dream.user.nickname, user_profile_path(@dream.user) %></strong></p>
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
 
-  <% if @dream.user != current_user%>
-    <%= link_to 'DREAM THIS', new_dream_booking_path(@dream), class: 'book-button' %>
-  <% end %>
+<script>
 
-<!-- edit and delete button, only for dream creator or admin-->
 
-  <% if policy(@dream).edit? %>
-    <%= link_to 'EDIT', edit_dream_path(@dream), class: 'edit-button' %>
-  <% end %>
-  <br> <br>
-  <% if policy(@dream).destroy? %>
-    <%= link_to 'DELETE', delete_dream_path, method: :delete, data: { confirm: "Delete #{@dream.title}?" }, class: 'book-button' %>
-  <% end %>
-</div>
+
+  const editForm = document.querySelector('current').addEventListener("click", function() {
+  editForm.visibility ='visible';
+});
+</script>
+</body>
 

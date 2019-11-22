@@ -1,4 +1,5 @@
 <div class="container" id="user-dashboard">
+
   <div class="header">
   <% if @user.photo.present?  %>
     <%= cl_image_tag(@user.photo, width: 300, height: 300, crop: :thumb, gravity: :face, radius: :max, class: 'avatar-large')%>
@@ -39,24 +40,21 @@
                 <% end %>
               <% end %>
             <% end %>
-          <% end %>
         </div>
       </div>
-    </div>
-  </div>
 
-<!--User's OWN bookings-->
 
-<!--If Bookings are empty, say there are none-->
+    <!--User's OWN bookings-->
 
     <h3><strong><%= @user.nickname %>'s</strong> booked dreams:</h3>
      <div class="row">
         <div class="col-sm-8 col-md-6 col-lg-4">
+          <!--If Bookings are empty, say there are none-->
          <% if @user.bookings.empty? %>
            <p>Whoops - I still haven't booked any dream :(</p>
          <% end %>
 
-<!--else, show the user's OWN bookings & update/delete buttons-->
+        <!--else, show the user's OWN bookings & update/delete buttons-->
         <% @user.bookings.each do |booking| %>
           <h4><%= booking.dream.title %>, booked on <%= booking.date_booking  %></h4>
         <div class="action-booking">
@@ -65,28 +63,24 @@
               method: :delete,
               data: { confirm: "Are you sure?" },
               class: 'create-button' %>
-            <% end %>
+           <% end %>
         </div>
       </div>
     </div>
+  
   <!--if @user is NOT!! the current user (someone else's profile)-->
-
   <% else %>
-  <!--go over the dreams they posted-->
-
+  
+    <!--go over the dreams they posted-->
     <% @dreams.each do |dream| %>
       <div class="row">
+        <!--First column: display dream image-->
         <div class="col-sm-8 col-md-6 col-lg-4">
-
-  <!--First column: display dream image-->
-
           <% url = "http://res.cloudinary.com/dl33w8wdg/#{dream.photo.identifier}" %>
           <%= image_tag(url) %>
         </div>
+        <!--Second column: show title, description, vibe-->
         <div class="col-sm-8 col-md-6 col-lg-4">
-
-  <!--Second column: show title, description, vibe-->
-
           <h4><%= dream.title %></h4>
           <p><%= dream.description %></p>
           <h5>Vibe: <%= dream.vibe %></h5>
