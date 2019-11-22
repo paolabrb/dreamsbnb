@@ -37,11 +37,11 @@
       <%= cl_image_tag @dream.photo, height:350, width: 600, crop: :fill, class: 'dream-image' %>
     <% else %>
 <!-- standard picture -->
-      <%= image_tag "http://getwallpapers.com/wallpaper/full/f/e/b/1156420-full-size-hd-gradient-wallpapers-2560x1440-free-download.jpg", alt: "alttext" %>
+      <%= image_tag "http://getwallpapers.com/wallpaper/full/f/e/b/1156420-full-size-hd-gradient-wallpapers-2560x1440-free-download.jpg", alt: "alttext", height:350, width: 600, crop: :fill, class: 'standard-img' %>
     <% end %>
 
     <% if @dream.user != current_user%>
-      <%= link_to 'DREAM THIS', new_dream_booking_path(@dream), class: 'book-button' %>
+      <%= link_to 'DREAM THIS', new_dream_booking_path(@dream), height:350, width: 600, crop: :fill, class: 'book-button' %>
     <% end %>
 
   <!-- edit and delete button, only for dream creator or admin-->
