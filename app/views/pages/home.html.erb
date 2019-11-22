@@ -1,20 +1,26 @@
 <%# Banner %>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.psdgraphics.com/file/magical-sky-background.jpg)">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(https://images.unsplash.com/photo-1514477917009-389c76a86b68?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1261&q=80
+)">
 </div>
-  <h1 class="tagline">WELL CURATED DREAMS<br>SHIPPED INSTANTLY<br> WITH CARE </h1>
+   <h1 class="tagline">Overnight Dreams shipped<br> instantly directly </h1>
+ <!--  Search function container -->
+    <div class="container">
+      <%= form_tag root_path, method: :get do %>
+      <h3 class="vibe-text"><%= label :name, '' %></h3>
+      <br><br>
+      <% vibes_array = Dream::VIBES %>
 
-<!-- Search function container -->
-<div class="container">
-  <%= form_tag root_path, method: :get do %>
-    <%= label :name, 'Filter a vibe here:' %>
-    <% vibes_array = Dream::VIBES %>
-    <%= select_tag :query,
-        options_for_select(vibes_array)%>
-    <%= submit_tag "Search", class: 'create-button' %>
-  <% end %>
-</div>
+      <%= select_tag :query,
+          options_for_select(vibes_array), class: 'drop-down btn btn-flat'%>
+           <%= submit_tag "Search", class: 'search-button btn btn-flat'%>
+    <% end %>
+  </div>
 
-<%# Cards %>
+
+ <p class="intro">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been<br> the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley<br> of type and scrambled it to make a type specimen book. </p>
+
+
+
 <div class="cards">
   <% @dreams.each do |dream| %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= dream.photo %>)">
@@ -24,7 +30,23 @@
 </div>
 
 <!-- Back to all Dreams after a search -->
-<%= link_to '*All dreams*', root_path, class: 'create-button' %>
+
+
+  <% link_to '*All dreams*', root_path, class: 'create-button' %>
 
 <!--Button to add a new dream-->
-<%= link_to '*Post your dream*', new_dream_path, class: 'create-button' %>
+
+<div style="text-align:center">
+  <%= link_to 'Post your dream', new_dream_path, class: 'btn-flat' %>
+</div>
+
+  <div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+</div>
+

@@ -1,33 +1,131 @@
 // Specific CSS for your home-page
 
-.banner {
-  object-fit: cover;
-  height: 350px;
+body {
+  background-color:white;
 }
 
-// tagline
-.tagline {
-  margin: 40px;
+.banner {
+  object-fit: cover;
+  height: 380px;
+}
+
+
+.container {
+  position:relative;
+  margin:0 auto;
+  z-index:100;
+  text-align:center;
+}
+
+.tagline{
+  text-align: center;
+  margin-top:-435px;
+  margin-left: 50px;
+  color:white;
+  font-size:57px;
+  font-weight: 500;
+  letter-spacing: 1.5;
 }
 
 // create button
+.search-button{
+  color: white;
+  padding: 8px 27px;
+  border-radius: 4px;
+  background: white;
+  transition: background 0.3s ease;
+}
+
+.drop-down {
+ padding: 28px 27px;
+ font-family: 'Red Hat Text', sans-serif;
+
+}
+.intro {
+  margin: 40px 162px 20px 200px;
+  text-align: center;
+  color: #7d7c7c;
+  font-size: 14px;
+}
+
+
+.vibe-text {
+  margin-top:0px;
+}
+
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dot {
+  height: 350px;
+  width: 350px;
+  background-color:#FBE27B;
+  display: inline-block;
+  margin-top: -312px;
+  margin-bottom: 100px;
+  position: relative;
+  z-index:-100;
+}
+
 .create-button {
-  margin: 40px;
+  width:110px;
   padding: 11px 10px;
   border: solid black 2px;
   font-size : 14px;
-  color:black
+  color:black;
+  margin-left: 580px;
 }
 
-.create-button:hover {
-  color:white;
-  text-decoration: none;
-  background-color: #6F6899;
+.btn-flat:hover {
+  text-decoration:none;
+  color:black;
 }
 
-// footer
+.cards {
+ margin-top:-150px;
+// border: 20px #FBE27B solid;
+ }
+
+.btn-flat {
+  text-align: center;
+  padding: 10px 26px;
+  border: solid #7d7c7c 1px;
+  font-size : 14px;
+  color:black;
+  letter-spacing:.5px;
+}
+
 .footer {
-  margin-top: 100px;
-  padding: 100px;
-  background-color: #655E97;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  margin-top:100px;
+  color: white;
+  background-color:#BBBBBB;
 }
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: white;
+  opacity: 1;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
+}
+
