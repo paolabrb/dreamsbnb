@@ -1,32 +1,18 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 250px 0;
-
+  padding: 550px 0;
 }
 
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
 
 .tagline{
   text-align: center;
-  margin-top:-410px;
+  margin-top: 38px;
   margin-left: 50px;
   color:white;
-  font-size:38px;
+  font-size:57px;
   font-weight: 500;
+  font-family:"Raleway", "Helvetica", "sans-serif";
 }
 
 .btns-flex {
@@ -36,21 +22,22 @@
 }
 
 .btn {
-text-align: center;
-//margin: 10px 390px;
-padding: 10px 26px;
-border: solid #7d7c7c 1px;
-font-size : 14px;
-color:pink;
-letter-spacing:.5px;
-
-
+  text-align: center;
+  //margin: 10px 390px;
+  padding: 10px 26px;
+  border: solid #7d7c7c 1px;
+  font-size : 14px;
+  color:pink;
+  letter-spacing:.5px;
 }
 
-.dream-title {
+ .dream-title {
   text-align:center;
-  margin-top:480px;
-  padding-bottom: 60px;
+ }
+
+.main-comp {
+  position: relative;
+  margin-top:300px;
 }
 
 .dot-dream {
@@ -61,10 +48,11 @@ letter-spacing:.5px;
   display: inline-block;
   margin-top: -37px;
   position: absolute;
-  top: 800px;
-  left:180px;
+  top: 0px;
+  left:237px;
   z-index: 100;
   font-size:24px;
+  position:absolute;
 }
 
 .dream-image {
@@ -79,8 +67,8 @@ letter-spacing:.5px;
 
 .dream-info {
   position: absolute;
-  top: 822px;
-  left:236px;
+  top: 20px;
+  left:288px;
   z-index: 500;
   color:white;
   font-size: 19px;
@@ -111,8 +99,6 @@ letter-spacing:.5px;
   transition: background 0.3s ease;
   margin-right:10px;
 }
-
-
 
 .current .edit-button:hover {
   text-decoration:none;
@@ -149,8 +135,8 @@ letter-spacing:.5px;
   border-radius: 4px;
 
   h1 {
-   text-align: left;
-   padding: 20px 5px;
+  text-align: left;
+  padding: 20px 5px;
   }
 
 }

@@ -5,8 +5,20 @@ body {
 }
 
 .banner {
-  object-fit: cover;
-  height: 380px;
+  background-size: cover;
+  background-position: center;
+  padding: 250px 0;
+}
+
+
+.tagline{
+  text-align: center;
+  margin-top:-410px;
+  margin-left: 50px;
+  color:white;
+  font-size:57x;
+  font-weight: 500;
+  font-family:"Raleway", "Helvetica", "sans-serif";
 }
 
 
@@ -17,15 +29,6 @@ body {
   text-align:center;
 }
 
-.tagline{
-  text-align: center;
-  margin-top:-435px;
-  margin-left: 50px;
-  color:white;
-  font-size:57px;
-  font-weight: 500;
-  letter-spacing: 1.5;
-}
 
 // create button
 .search-button{
