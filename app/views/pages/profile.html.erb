@@ -33,8 +33,8 @@
               <h5>Whoops - this dream hasn't been booked yet.</h5>
             <!--If there are bookings, show the nickname of the bookers and stats-->
             <% else %>
-              <%= dream.bookings.each do |booking| %>
-                <p>Booked by:<%= booking.user.nickname %>, on  <%= booking.created_at %>, for <%= booking.date_booking %></p>
+              <% dream.bookings.each do |booking| %>
+                <p>Booked by: <%= booking.user.nickname %>, on  <%= booking.created_at %>, for <%= booking.date_booking %></p>
               <% end %>
             <% end %>
           </div>
