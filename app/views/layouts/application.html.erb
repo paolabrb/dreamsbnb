@@ -30,7 +30,11 @@
             <%= link_to 'POST A DREAM', new_dream_path , class: 'nav-link'  %>
           </li>
           <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src=<%= current_user.photo %> />
+            <% if current_user.photo.present? %>
+              <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src=<%= current_user.photo %> />
+            <% else %>
+              <%= cl_image_tag("whzexbgwqgsw5xgctrit", crop: :fill, class: 'avatar') %>
+            <% end %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to 'Profile', user_profile_path(current_user), class: 'dropdown-item' %>
               <%= link_to 'Log out', destroy_user_session_path, class: 'dropdown-item', method: :delete, data: { confirm: "Are you ready to take a nap?" }  %>
