@@ -69,32 +69,37 @@ letter-spacing:.5px;
 
 .dream-image {
   display: block;
-  margin: -14px auto;
+  margin: 22px auto;
+}
+
+.standard-img {
+  display: block;
+  margin: 22px auto;
 }
 
 .dream-info {
   position: absolute;
-  top: 856px;
-  left:247px;
+  top: 822px;
+  left:236px;
   z-index: 500;
   color:white;
+  font-size: 19px;
   font-family: 'Red Hat Text', sans-serif;
 }
 
-.current {
+.book-button{
   text-align: center;
   padding: 10px 26px;
   border: solid #7d7c7c 1px;
-  font-size : 14px;
-  color:black;
-  letter-spacing:.5px;
+  font-size: 14px;
+  color: black;
+  letter-spacing: .5px;
   border-radius: 4px;
-  background: white;
-  transition: background 0.3s ease;
-  margin-right:15px;
+  margin-left: 560px;
+  margin-top: -51px
 }
 
-.delete-button {
+.edit-button{
   text-align: center;
   border: solid #7d7c7c 1px;
   font-size : 14px;
@@ -104,16 +109,37 @@ letter-spacing:.5px;
   border-radius: 4px;
   background: white;
   transition: background 0.3s ease;
+  margin-right:10px;
 }
 
-.current:hover {
+
+
+.current .edit-button:hover {
   text-decoration:none;
   color:black;
 }
 
-
 .edit-form {
+  margin-top: 80px;
   visibility: hidden;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.delete-button {
+  text-align: center;
+  border: solid #7d7c7c 1px;
+  font-size : 14px;
+  color:black;
+  letter-spacing:.5px;
+  padding: 8.5px 27px;
+  border-radius: 4px;
+  background: white;
+  transition: background 0.3s ease;
+  margin-top: 5px;
+}
+.p-b {
+  margin-top:6px;
 }
 // form {
   // //border: 1px solid rgba(0,0,0,0.5);

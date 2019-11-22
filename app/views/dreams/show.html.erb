@@ -27,7 +27,7 @@
     </div>
 
     <div class="dream-info">
-     <p>Description: <%= @dream.description %><br>
+     <p class="desc">Description: <%= @dream.description %><br>
         Duration: <%= @dream.duration %><br>
         Vibe: <%= @dream.vibe %></p>
       <p>Created by <strong><%= link_to @dream.user.nickname, user_profile_path(@dream.user) %></strong></p>
@@ -37,21 +37,21 @@
       <%= cl_image_tag @dream.photo, height:350, width: 600, crop: :fill, class: 'dream-image' %>
     <% else %>
 <!-- standard picture -->
-      <%= image_tag "http://getwallpapers.com/wallpaper/full/f/e/b/1156420-full-size-hd-gradient-wallpapers-2560x1440-free-download.jpg", alt: "alttext" %>
+      <%= image_tag "http://getwallpapers.com/wallpaper/full/f/e/b/1156420-full-size-hd-gradient-wallpapers-2560x1440-free-download.jpg", alt: "alttext", height:350, width: 600, crop: :fill, class: 'standard-img' %>
     <% end %>
 
     <% if @dream.user != current_user%>
-      <%= link_to 'DREAM THIS', new_dream_booking_path(@dream), class: 'book-button' %>
+      <%= link_to 'DREAM THIS', new_dream_booking_path(@dream), height:350, width: 600, crop: :fill, class: 'book-button' %>
     <% end %>
 
   <!-- edit and delete button, only for dream creator or admin-->
     <div class="btns-flex">
       <% if policy(@dream).edit? %>
-      <%=link_to 'Edit', edit_dream_path(@dream), class: 'edit-button current' %>
+        <p class="edit-button current">Edit</p>
       <% end %>
       <% if policy(@dream).destroy? %>
-      <%= link_to 'Delete', delete_dream_path, method: :delete, data: { confirm: "Delete #{@dream.title}?" }, class: 'delete-button current' %>
-      </div>
+        <p class="p-b"><%= link_to 'Delete', delete_dream_path, method: :delete, data: { confirm: "Delete #{@dream.title}?" }, class: 'delete-button' %></p>
+    </div>
       <% end %>
     </div>
 
@@ -77,14 +77,5 @@
         <a href="#"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
-
-<script>
-
-
-
-  const editForm = document.querySelector('current').addEventListener("click", function() {
-  editForm.visibility ='visible';
-});
-</script>
 </body>
 
