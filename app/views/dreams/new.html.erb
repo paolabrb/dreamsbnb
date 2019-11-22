@@ -1,13 +1,16 @@
-<div class="container-form">
-  <%= simple_form_for(@dream, :defaults => { :input_html => { :class => "text" } }) do |f| %>
-  <h1>DREAMERS,</h1>
-  <%= f.input :title, class: 'text' %>
-  <%= f.input :description, class: 'text' %>
-  <%= f.input :vibe, collection: Dream::VIBES, class: 'text'%>
-  <%= f.input :duration, label:'Duration (min)', placeholder: 'forever', class: 'text' %>
-  <%= f.input :photo, class: 'text' %>
-  <%= f.input :photo_cache, as: :hidden, class: 'text'%>
-  <%= f.submit 'POST DREAM', class: 'create-button' %>
-  <% end %>
+<div class="container">
+  <div class="form-design">
+    <%= simple_form_for(@dream, :defaults => { :input_html => { :class => "text" } }) do |f| %>
+    <div class="typewriter">
+      <h1 class="typewriter-text">DREAMERS,</h1>
+    </div>
+    <%= f.input :title, class: 'text' %>
+    <%= f.input :description, class: 'text' %>
+    <%= f.input :vibe, collection: Dream::VIBES, class: 'text'%>
+    <%= f.input :duration, label:'Duration (min)', placeholder: 'forever', class: 'text' %>
+    <%= f.input :photo, class: 'text' %>
+    <%= f.input :photo_cache, as: :hidden, class: 'text'%>
+    <%= f.submit 'POST DREAM', class: 'create-button' %>
+    <% end %>
+  </div>
 </div>
-

@@ -1,6 +1,9 @@
-<%= simple_form_for [@dream, @booking], method: "post" do |f| %>
-  <h1>Book <strong><%= @dream.title %></strong> now!</h1>
-  <%= f.input :date_booking, as: :string, required: false, input_html: {class: "datepicker"} %>
-  <%= f.submit "BOOK NOW", class: 'create-button-form' %>
-<% end %>
-
+<div class="container">
+  <div class="form-design">
+    <%= simple_form_for [@dream, @booking], method: "post" do |f| %>
+      <h1>Book <strong><%= @dream.title %></strong> now!</h1>
+      <%= f.input :date_booking, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.submit "BOOK NOW", class: 'create-button-form' %>
+    <% end %>
+  </div>
+</div>
