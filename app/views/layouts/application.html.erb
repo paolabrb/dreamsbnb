@@ -7,8 +7,9 @@
     <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text&display=swap" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
@@ -25,20 +26,23 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'POST YOUR DREAM', new_dream_path , class: 'nav-link'  %>
+          </li>
           <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://seedlingsgardening.com/wp-content/uploads/sites/9/2016/11/avatar.jpg" />
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src=<%= current_user.photo %> />
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to 'Profile', user_profile_path(current_user), class: 'dropdown-item' %>
               <%= link_to 'Log out', destroy_user_session_path, class: 'dropdown-item', method: :delete, data: { confirm: "Are you ready to take a nap?" }  %>
             </div>
           </li>
           <% else %>
-          <li class="nav-item active">
-            <%= link_to 'SIGN UP', new_user_registration_path , class: 'nav-link'  %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'LOG IN', new_user_session_path, class: 'nav-link'  %>
-          </li>
+            <li class="nav-item">
+              <%= link_to 'SIGN UP', new_user_registration_path , class: 'nav-link'  %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'LOG IN', new_user_session_path, class: 'nav-link'  %>
+            </li>
           <% end %>
         </ul>
       </div>
@@ -52,10 +56,6 @@
         <a href="https://film-grab.com/2017/02/13/the-matrix/#bwg19/911">DEEP</a>
       </div>
     </div> -->
-
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

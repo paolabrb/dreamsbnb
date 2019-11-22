@@ -1,6 +1,23 @@
 <%# Banner %>
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(https://images.unsplash.com/photo-1514477917009-389c76a86b68?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1261&q=80
 )">
+
+  <h1 class="tagline">WELL CURATED DREAMS<br>SHIPPED INSTANTLY<br> WITH CARE </h1>
+
+<!-- Search function container -->
+<div>
+  <%= form_tag root_path, method: :get do %>
+    <%= label :name, 'Filter here the dreams depending on the vibe:' %>
+    <% vibes_array = Dream::VIBES %>
+    <div class="dropdown">
+      <%= select_tag :query,
+          options_for_select(vibes_array),
+          class: 'dropdown-item' %>
+      <%= submit_tag "Search", class: 'create-button' %>
+      <% end %>
+    </div>
+
 </div>
    <h1 class="tagline">Overnight Dreams shipped<br> instantly directly </h1>
  <!--  Search function container -->
@@ -22,12 +39,26 @@
 
 
 <div class="cards">
+
+<%# Cards %>
+<% if params[:query].present? %>
+  <p>The current dreams with the vibe "<%= params[:query] %>" are:</p>
+
   <% @dreams.each do |dream| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= dream.photo %>)">
-      <%= link_to dream.title, dream_path(dream) %>
-    </div>
-  <% end %>
-</div>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= dream.photo %>)">
+          <%= link_to dream.title, dream_path(dream) %>
+        </div>
+      <% end %>
+<% else %>
+  <div class="cards">
+    <% @dreams.each do |dream| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= dream.photo %>)">
+        <%= link_to dream.title, dream_path(dream) %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
 
 <!-- Back to all Dreams after a search -->
 

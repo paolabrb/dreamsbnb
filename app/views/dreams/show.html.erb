@@ -19,15 +19,27 @@
 
    <!--  Search function container -->
   <h2 class="dream-title"><%= @dream.title %></h2>
+
   <div class="container-form">
     <div style="text-align:center">
       <span class="dot-dream"></span>
+      <div class="dream-info"
+       <p>Description: <%= @dream.description %><br>
+          Duration: <%= @dream.duration %><br>
+          Vibe: <%= @dream.vibe %>
+          <p>Created by <strong><%= link_to @dream.user.nickname, user_profile_path(@dream.user) %></strong></p>
+        </p>
+      </div>
     </div>
       <%  if @dream.photo.present? %>
       <%= cl_image_tag @dream.photo, height:350, width: 600, crop: :fill, class: 'dream-image' %>
       <% else %>
       <%= image_tag "http://getwallpapers.com/wallpaper/full/f/e/b/1156420-full-size-hd-gradient-wallpapers-2560x1440-free-download.jpg", alt: "alttext" %>
   <!-- standard picture -->
+  <% end %>
+
+    <% if @dream.user != current_user%>
+    <%= link_to 'DREAM THIS', new_dream_booking_path(@dream), class: 'book-button' %>
   <% end %>
 
   <!-- edit and delete button, only for dream creator or admin-->
@@ -37,12 +49,6 @@
       <% end %>
       <% if policy(@dream).destroy? %>
       <%= link_to 'Delete', delete_dream_path, method: :delete, data: { confirm: "Delete #{@dream.title}?" }, class: 'delete-button current' %>
-      </div>
-      <div class="dream-info"
-       <p>Description: <%= @dream.description %><br>
-          Duration: <%= @dream.duration %><br>
-          Vibe: <%= @dream.vibe %>
-        </p>
       </div>
       <% end %>
     </div>
