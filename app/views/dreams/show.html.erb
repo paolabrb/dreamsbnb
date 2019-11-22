@@ -21,15 +21,15 @@
 </div>
 
 
-  <div class="main-comp">
-    <h2 class="dream-title"><%= @dream.title %></h2>
-    <span class="dot-dream"></span>
-    <div class="dream-info">
-    <p class="desc">Description: <%= @dream.description %><br>
-        Duration: <%= @dream.duration %><br>
-        Vibe: <%= @dream.vibe %></p>
-    <p>Created by <strong><%= link_to @dream.user.nickname, user_profile_path(@dream.user) %></strong></p>
-  </div>
+<div class="main-comp">
+  <h2 class="dream-title"><%= @dream.title %></h2>
+  <span class="dot-dream"></span>
+  <div class="dream-info">
+  <p class="desc">Description: <%= @dream.description %><br>
+      Duration: <%= @dream.duration %><br>
+      Vibe: <%= @dream.vibe %></p>
+  <p>Created by <strong><%= link_to @dream.user.nickname, user_profile_path(@dream.user) %></strong></p>
+</div>
 
 
 
