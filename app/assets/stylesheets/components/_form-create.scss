@@ -115,15 +115,52 @@ letter-spacing:.5px;
 .edit-form {
   visibility: hidden;
 }
-// form {
-  // //border: 1px solid rgba(0,0,0,0.5);
-  // padding: 30px 70px 90px 90px;
-  // //box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-  // border-radius: 4px;
 
-  // h1 {
-  //   text-align: left;
-  //   padding: 20px 5px;
-  // }
+.form-design {
+  border: 1px solid rgba(0,0,0,0.5);
+  padding: 30px 70px 90px 90px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  border-radius: 4px;
 
+  h1 {
+   text-align: left;
+   padding: 20px 5px;
+  }
+
+}
+
+.typewriter {
+  font-family: Courier, monospace;
+  display: inline-block;
+}
+
+.typewriter-text {
+    display: inline-block;
+    overflow: hidden;
+    letter-spacing: 2px;
+    animation: typing 2s steps(30, end), blink .75s step-end infinite;
+    white-space: nowrap;
+    font-size: 30px;
+    font-weight: 700;
+    border-right: 4px solid gray;
+    box-sizing: border-box;
+}
+
+@keyframes typing {
+    from {
+        width: 0%
+    }
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink {
+    from, to {
+        border-color: transparent
+    }
+    50% {
+        border-color: black;
+    }
+}
 
