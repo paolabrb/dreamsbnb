@@ -1,14 +1,17 @@
-<!--form to edit the dream-->
-<div class="container-form">
-  <%= simple_form_for(@dream) do |f| %>
-  <h1>DREAMERS,</h1>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :vibe, collection: Dream::VIBES%>
-  <%= f.input :duration, label:'Duration (min)', placeholder: 'forever' %>
-  <%= f.input :photo, class: 'text' %>
-  <%= f.input :photo_cache, as: :hidden, class: 'text'%>
-  <%= f.submit 'UPDATE DREAM', class: 'create-button-form' %>
-  <% end %>
+<div class="container">
+  <div class="form-design">
+    <%= simple_form_for(@dream) do |f| %>
+    <div class="typewriter">
+      <h1 class="typewriter-text">DREAMERS,</h1>
+    </div>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :vibe, collection: Dream::VIBES%>
+    <%= f.input :duration, label:'Duration (min)', placeholder: 'forever' %>
+    <%= f.input :photo, class: 'text' %>
+    <%= f.input :photo_cache, as: :hidden, class: 'text'%>
+    <%= f.submit 'UPDATE', class: 'create-button' %>
+    <% end %>
+  </div>
 </div>
 
