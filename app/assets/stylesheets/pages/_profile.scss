@@ -1,5 +1,12 @@
 .user-dashboard {
   width: 900px;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+a {
+  color: black;
+  // text-decoration: underline;
 }
 
 // Design Avatar und Display Name
@@ -35,30 +42,71 @@ h3 {
   font-size: 30px;
 }
 
-// Design cards
-.row {
+// Box that display own dreams
+.own-dreams {
   img {
-    width: 300px;
+    width: 200px;
   }
   p {
     font-size: 18px;
   }
-  h4 {
-    font-size: 26px;
-    font-weight: bold;
-  }
-  h5 {
-    font-size: 22px;
+  .own-dreams-text {
+    h4 {
+      font-size: 26px;
+    }
+    h5 {
+      font-size: 18px;
+    }
+    text-align:left;
+    padding-left: 20px;
+    width: 450px;
   }
   padding: 20px 20px;
   border: 1px solid rgba(0,0,0,0.8);
   border-radius: 3px;
-  margin: 10px auto;
+  margin-bottom: 20px;
+  display: flex;
+  width: 750px;
 }
 
-.card-text {
-  align-items: left;
+// Box that display own bookings
+.own-booking {
+  h4 {
+    font-size: 26px;
+    padding-top: 15px;
+  }
 }
+
+.own-booking-present {
+  h4 {
+    font-size: 26px;
+    width: 450px;
+    text-align: left;
+  }
+
+  .action-booking {
+    a {
+      margin:10px;
+      height: 45px;
+    }
+    a:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+  display: flex;
+  width: 200px;
+  }
+  padding: 20px 20px;
+  border: 1px solid rgba(0,0,0,0.8);
+  border-radius: 3px;
+  display: flex;
+  width: 750px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+
 
 
 
