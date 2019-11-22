@@ -1,37 +1,38 @@
 <!--Dream show page with the details-->
 <%# Banner %>
-<body>
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(https://images.unsplash.com/photo-1514477917009-389c76a86b68?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1261&q=80
-  )">
-      <div class="container">
-        <%= form_tag root_path, method: :get do %>
-        <%= label :name, '' %>
-        <br><br>
-        <% vibes_array = Dream::VIBES %>
 
-        <%= select_tag :query,
-            options_for_select(vibes_array), class: 'drop-down btn btn-flat'%>
-             <%= submit_tag "Search", class: 'search-button btn btn-flat'%>
-      <% end %>
-    </div>
-  </div>
-   <h1 class="tagline">Find and Book a dream<br>anytime</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(https://images.unsplash.com/photo-1514477917009-389c76a86b68?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1261&q=80
+)">
+</div>
+<!-- Search function container -->
 
-   <!--  Search function container -->
-  <h2 class="dream-title"><%= @dream.title %></h2>
+<h1 class="tagline">Curated Dreams catered<br>with care</h1>
+ <!--  Search function container -->
+<div class="container">
+  <%= form_tag root_path, method: :get do %>
+  <h3 class="vibe-text"><%= label :name, '' %></h3>
+  <br><br>
+  <% vibes_array = Dream::VIBES %>
 
-  <div class="container-form">
+  <%= select_tag :query,
+      options_for_select(vibes_array), class: 'drop-down btn btn-flat'%>
+       <%= submit_tag "Search", class: 'search-button btn btn-flat'%>
+  <% end %>
+</div>
 
-    <div style="text-align:center">
-      <span class="dot-dream"></span>
-    </div>
 
+  <div class="main-comp">
+    <h2 class="dream-title"><%= @dream.title %></h2>
+    <span class="dot-dream"></span>
     <div class="dream-info">
-     <p class="desc">Description: <%= @dream.description %><br>
+    <p class="desc">Description: <%= @dream.description %><br>
         Duration: <%= @dream.duration %><br>
         Vibe: <%= @dream.vibe %></p>
-      <p>Created by <strong><%= link_to @dream.user.nickname, user_profile_path(@dream.user) %></strong></p>
-    </div>
+    <p>Created by <strong><%= link_to @dream.user.nickname, user_profile_path(@dream.user) %></strong></p>
+  </div>
+
+
+
 
     <%  if @dream.photo.present? %>
       <%= cl_image_tag @dream.photo, height:350, width: 600, crop: :fill, class: 'dream-image' %>
@@ -77,5 +78,5 @@
         <a href="#"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
-</body>
+
 
