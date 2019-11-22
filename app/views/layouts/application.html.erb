@@ -14,7 +14,7 @@
   <body>
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <a class="navbar-brand" href="/">
-      <%= image_tag "", alt: "", width: 800 %>
+        <h2>D R E A M S</h2>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -27,7 +27,7 @@
         <ul class="navbar-nav mr-auto">
           <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to 'POST YOUR DREAM', new_dream_path , class: 'nav-link'  %>
+            <%= link_to 'POST A DREAM', new_dream_path , class: 'nav-link'  %>
           </li>
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src=<%= current_user.photo %> />
