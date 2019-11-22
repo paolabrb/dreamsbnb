@@ -97,10 +97,9 @@ letter-spacing:.5px;
   border-radius: 4px;
   margin-left: 560px;
   margin-top: -51px
-
 }
 
-.delete-button {
+.edit-button{
   text-align: center;
   border: solid #7d7c7c 1px;
   font-size : 14px;
@@ -110,15 +109,37 @@ letter-spacing:.5px;
   border-radius: 4px;
   background: white;
   transition: background 0.3s ease;
+  margin-right:10px;
 }
 
-.current:hover {
+
+
+.current .edit-button:hover {
   text-decoration:none;
   color:black;
 }
 
 .edit-form {
+  margin-top: 80px;
   visibility: hidden;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.delete-button {
+  text-align: center;
+  border: solid #7d7c7c 1px;
+  font-size : 14px;
+  color:black;
+  letter-spacing:.5px;
+  padding: 8.5px 27px;
+  border-radius: 4px;
+  background: white;
+  transition: background 0.3s ease;
+  margin-top: 5px;
+}
+.p-b {
+  margin-top:6px;
 }
 // form {
   // //border: 1px solid rgba(0,0,0,0.5);
