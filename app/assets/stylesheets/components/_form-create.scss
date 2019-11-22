@@ -1,42 +1,129 @@
-.container-form {
- width: 900px;
- margin: 0 auto;
- padding: 100px 0;
- text-align: center;
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 250px 0;
+
 }
 
-.edit-button {
-  margin: 40px;
-  padding: 11px 10px;
-  border: solid black 2px;
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.tagline{
+  text-align: center;
+  margin-top:-410px;
+  margin-left: 50px;
+  color:white;
+  font-size:38px;
+  font-weight: 500;
+}
+
+.btns-flex {
+  display:flex;
+  justify-content:center;
+  margin-top:30px;
+}
+
+.btn {
+text-align: center;
+//margin: 10px 390px;
+padding: 10px 26px;
+border: solid #7d7c7c 1px;
+font-size : 14px;
+color:pink;
+letter-spacing:.5px;
+
+
+}
+
+.dream-title {
+  text-align:center;
+  margin-top:480px;
+  padding-bottom: 60px;
+}
+
+.dot-dream {
+  height: 250px;
+  width: 250px;
+  background-color:#C4C4DD;
+  border-radius: 50%;
+  display: inline-block;
+  margin-top: -37px;
+  position: absolute;
+  top: 800px;
+  left:180px;
+  z-index: 100;
+  font-size:24px;
+}
+
+.dream-image {
+  display: block;
+  margin: -14px auto;
+}
+
+.dream-info {
+  position: absolute;
+  top: 856px;
+  left:247px;
+  z-index: 500;
+  color:white;
+  font-family: 'Red Hat Text', sans-serif;
+}
+
+.current {
+  text-align: center;
+  padding: 10px 26px;
+  border: solid #7d7c7c 1px;
   font-size : 14px;
-  color:black
+  color:black;
+  letter-spacing:.5px;
+  border-radius: 4px;
+  background: white;
+  transition: background 0.3s ease;
+  margin-right:15px;
 }
 
 .delete-button {
-  margin: 40px;
-  padding: 11px 10px;
-  border: solid black 2px;
-  font-size : 12px;
-  width: 120px;
-  margin: 24px 0px;
-  padding: 11px 15px;
-  color:black
-}
-
-
-.dream-title {
-  margin-top: 50px;
-}
-
-form {
-  border: 1px solid rgba(0,0,0,0.5);
-  padding: 30px 70px 90px 90px;
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  text-align: center;
+  border: solid #7d7c7c 1px;
+  font-size : 14px;
+  color:black;
+  letter-spacing:.5px;
+  padding: 8px 27px;
   border-radius: 4px;
-  h1 {
-    text-align: left;
-    padding: 20px 5px;
-  }
+  background: white;
+  transition: background 0.3s ease;
 }
+
+.current:hover {
+  text-decoration:none;
+  color:black;
+}
+
+
+.edit-form {
+  visibility: hidden;
+}
+// form {
+  // //border: 1px solid rgba(0,0,0,0.5);
+  // padding: 30px 70px 90px 90px;
+  // //box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  // border-radius: 4px;
+
+  // h1 {
+  //   text-align: left;
+  //   padding: 20px 5px;
+  // }
+
 

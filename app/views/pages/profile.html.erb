@@ -1,4 +1,5 @@
 <div class="container" id="user-dashboard">
+
   <% if @user.photo.present?  %>
     <%= cl_image_tag(@user.photo, width: 200, height: 200, crop: :thumb, gravity: :face, radius: :max, class: 'avatar-large')%>
   <% else %>
@@ -9,37 +10,29 @@
   <h3><strong><%= @user.nickname %>'s</strong> posted dreams:</h3>
 
 <!--If the @user IS the current user (own profile)-->
-
   <% if @user == current_user %>
-
 <!--Go over @dreams (user.dreams)-->
-
     <% @dreams.each do |dream| %>
       <div class="row">
         <div class="col-sm">
-
 <!--First column: display dream image-->
           <% url = "http://res.cloudinary.com/dl33w8wdg/#{dream.photo.identifier}" %>
           <%= image_tag(url) %>
         </div>
         <div class="col-sm">
           <h2><%= dream.title %></h2>
-
 <!--Second column: if bookings is empty, say there are no bookings-->
           <% if dream.bookings.empty? %>
             <p>Whoops - this dream hasn't been booked yet.</p>
-
           <% else %>
-
 <!--If there are bookings, show the nickname of the bookers and stats-->
-
-            <%= dream.bookings.each do |booking| %>
-              <p>Booked by:<%= booking.user.nickname %>, on  <%= booking.created_at %>, for <%= booking.date_booking %></p>
-            <% end %>
+          <%= dream.bookings.each do |booking| %>
+            <p>Booked by:<%= booking.user.nickname %>, on  <%= booking.created_at %>, for <%= booking.date_booking %></p>
           <% end %>
-        </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
+  <% end %>
 
 <!--User's OWN bookings-->
 
